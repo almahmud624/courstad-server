@@ -27,8 +27,6 @@ async function run() {
     app.get("/courses", async (req, res) => {
       const page = parseInt(req.query.page);
       const size = parseInt(req.query.size);
-      console.log(page, size);
-
       const query = {};
       const cursor = courseCollection.find(query);
       const courses = await cursor
