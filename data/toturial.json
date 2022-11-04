@@ -65,7 +65,9 @@
     "courseThumb": "https://image.freepik.com/free-vector/design-community-concept-illustration_114360-1244.jpg",
     "coursePrice": 64,
     "courseEnrollment": 3104,
-    "courseDescription": "Have you ever found yourself spotting shapes in the clouds? That is because people are hard-wired to recognize patterns, even when there are none. It’s the same reason that we often think we know where to click when first experiencing a website—and get frustrated if things aren’t where we think they should be. Choosing the right user interface design pattern is crucial to taking advantage of this natural pattern-spotting, and this course will teach you how to do just that."
+    "courseDescription": "Have you ever found yourself spotting shapes in the clouds? That is because people are hard-wired to recognize patterns, even when there are none. It’s the same reason that we often think we know where to click when first experiencing a website—and get frustrated if things aren’t where we think they should be. Choosing the right user interface design pattern is crucial to taking advantage of this natural pattern-spotting, and this course will teach you how to do just that.",
+    "teacherThumb": "https://images.unsplash.com/photo-1546961329-78bef0414d7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHVzZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    "teacherSkills": "Expert in Design"
   },
   {
     "_id": "6357b4f08f6dbb83558fc049",
@@ -77,7 +79,9 @@
     "courseThumb": "https://image.freepik.com/free-vector/webinar-concept-illustration_114360-4764.jpg",
     "coursePrice": 56,
     "courseEnrollment": 2204,
-    "courseDescription": "If your goal is to become fluent in English, this is the course to take. I've been working on the lessons in this English course for over 10 years, and have seen them help many students master the key skills they need to really understand how to use English at a high level. This course contains everything you need to start using the English language naturally, and feel confident in your English skills. The course will guide you step-by-step. Also, each lesson is filled with natural English examples, which is the best way to learn.Each section of the course includes an assignment so that you can practice everything you learn. This is really essential! Input is great, but if you're not using the English language as you learn, it won't stick. The course starts out with an intensive focus on how to describe things clearly in English. Explore the examples other students have made (along with my feedback) in addition to adding your own."
+    "courseDescription": "If your goal is to become fluent in English, this is the course to take. I've been working on the lessons in this English course for over 10 years, and have seen them help many students master the key skills they need to really understand how to use English at a high level. This course contains everything you need to start using the English language naturally, and feel confident in your English skills. The course will guide you step-by-step. Also, each lesson is filled with natural English examples, which is the best way to learn.Each section of the course includes an assignment so that you can practice everything you learn. This is really essential! Input is great, but if you're not using the English language as you learn, it won't stick. The course starts out with an intensive focus on how to describe things clearly in English. Explore the examples other students have made (along with my feedback) in addition to adding your own.",
+    "teacherThumb": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHVzZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    "teacherSkills": "Skilled in English spoken"
   },
   {
     "_id": "6357b4f044c5c65283027b56",
@@ -89,7 +93,9 @@
     "courseThumb": "https://themezhub.net/learnup-demo-2/learnup/assets/img/co-6.jpg",
     "coursePrice": 54,
     "courseEnrollment": 5204,
-    "courseDescription": "Whether you are an analyst or a business intelligence developer or anyone who has to deal with or present data in your day to day work, Tableau will make your life a lot better with its intuitive visual analytics.If you are not into dealing with data but want to build a career in data science, data visualization and business analytics then Tableau is one of the most important tools you must learn to move forward in your career.You will be pleasantly surprised by the quality of the data visualizations you will create within just a couple of weeks into using Tableau.Your stakeholders and customers would see remarkable value in the data visualization you would create using Tableau.Plus, if you have been spending hours and hours building charts using other clunky programs, then switching to tableau can save you literally hundreds of hours.Also, gaining a certification in tableau has proven to be a great addition to one's profile when they want to become a data scientist or a data analyst."
+    "courseDescription": "Whether you are an analyst or a business intelligence developer or anyone who has to deal with or present data in your day to day work, Tableau will make your life a lot better with its intuitive visual analytics.If you are not into dealing with data but want to build a career in data science, data visualization and business analytics then Tableau is one of the most important tools you must learn to move forward in your career.You will be pleasantly surprised by the quality of the data visualizations you will create within just a couple of weeks into using Tableau.Your stakeholders and customers would see remarkable value in the data visualization you would create using Tableau.Plus, if you have been spending hours and hours building charts using other clunky programs, then switching to tableau can save you literally hundreds of hours.Also, gaining a certification in tableau has proven to be a great addition to one's profile when they want to become a data scientist or a data analyst.",
+    "teacherThumb": "https://images.unsplash.com/photo-1614436163996-25cee5f54290?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHVzZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    "teacherSkills": "Expert in Data Science"
   },
   {
     "_id": "6357b4f0ef032bc9838cd950",
@@ -101,6 +107,92 @@
     "courseThumb": "https://image.freepik.com/free-vector/hand-drawn-web-developers_23-2148819604.jpg",
     "coursePrice": 124,
     "courseEnrollment": 6204,
-    "courseDescription": "You’ll get an introduction into the three most important JavaScript frameworks (Angular, React.js and Vue.js) and you’ll also get a detailed comparison! This will then allow you to pick other resources or courses to dive super-deep into your chosen framework whilst having a solid foundation already.Throughout the course, we’ll dive into the basics of these frameworks but we’ll also have a look at why we use them to begin with. The role of jQuery and how these frameworks differ from jQuerywill be clarified, too! Not only are we going to dive into the basics of the three most popular JavaScript frameworks, this course will also draw a detailed comparison. A couple of different dimensions will be considered to find out which framework might be the perfect tool for the job you have at hand!"
+    "courseDescription": "You’ll get an introduction into the three most important JavaScript frameworks (Angular, React.js and Vue.js) and you’ll also get a detailed comparison! This will then allow you to pick other resources or courses to dive super-deep into your chosen framework whilst having a solid foundation already.Throughout the course, we’ll dive into the basics of these frameworks but we’ll also have a look at why we use them to begin with. The role of jQuery and how these frameworks differ from jQuerywill be clarified, too! Not only are we going to dive into the basics of the three most popular JavaScript frameworks, this course will also draw a detailed comparison. A couple of different dimensions will be considered to find out which framework might be the perfect tool for the job you have at hand!",
+    "teacherThumb": "https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHVzZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    "teacherSkills": "Expert in Development"
+  },
+  {
+    "_id": "6357b4f0ef032bc4g838cd95",
+    "courseId": 9,
+    "courseName": "Introduction to iOS app development, Xcode and Interface Builder",
+    "categories": "Development",
+    "courseTutor": "Hoot Mark",
+    "courseDuration": "3 Hours",
+    "courseThumb": "https://img.freepik.com/free-vector/app-development-business-concept-background_23-2147872248.jpg?w=360&t=st=1667550906~exp=1667551506~hmac=5f105b18bbda518de675b60c893f6178821fd561b9d01bce6df269365ca08095",
+    "coursePrice": 14,
+    "courseEnrollment": 1204,
+    "courseDescription": "This free online iOS app development course will teach absolute beginners about iOS app development, creating interfaces, and the Xcode environment. You will learn how to create adaptive, robust user interfaces for iOS applications as well as adaptive interface design through Xcode. You will also study how you can add sound and animations to your application, all through easy to understand, practical, and useful examples.",
+    "teacherThumb": "https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDV8fHVzZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    "teacherSkills": "Development Expert"
+  },
+  {
+    "_id": "635erb4f0ef032bc4g838cd95",
+    "courseId": 10,
+    "courseName": "Getting Started with Python",
+    "categories": "Development",
+    "courseTutor": "Redit Lark",
+    "courseDuration": "4 Hours",
+    "courseThumb": "https://img.freepik.com/free-vector/programmer-working-web-development-code-engineer-programming-python-php-java-script-computer_90220-251.jpg?w=360&t=st=1667551119~exp=1667551719~hmac=bf88e694c1a1805161b8e97c25fdad716096d2191ae1fb6bdfb34aa121c9197e",
+    "coursePrice": 16,
+    "courseEnrollment": 2404,
+    "courseDescription": "This course aims to teach everyone the basics of programming computers using Python. We cover the basics of how one constructs a program from a series of simple instructions in Python.  The course has no pre-requisites and avoids all but the simplest mathematics. Anyone with moderate computer experience should be able to master the materials in this course. This course will cover Chapters 1-5 of the textbook “Python for Everybody”.  Once a student completes this course, they will be ready to take more advanced programming courses. This course covers Python 3.",
+    "teacherThumb": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTN8fHVzZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    "teacherSkills": "Expert in Development"
+  },
+  {
+    "_id": "63fs3rb4f0ef032bc4g838cd95",
+    "courseId": 11,
+    "courseName": "Conquering the Fear of Public Speaking",
+    "categories": "English",
+    "courseTutor": "Willam Hezz",
+    "courseDuration": "4.5 Hours",
+    "courseThumb": "https://img.freepik.com/free-vector/english-teacher-concept-illustration_114360-7657.jpg?w=360&t=st=1667551264~exp=1667551864~hmac=dc2102ab57d438aa64013035ccbd9b2e81ae39f06aa082e0aed0e7e31887932a",
+    "coursePrice": 22,
+    "courseEnrollment": 3244,
+    "courseDescription": "This course is meant to teach one thing - and one thing alone. How to get over the fear of speaking in public! How to handle the anxiety that comes over when you approach the stage or stand in front of an audience. That's it. This is a focused exposition on the various techniques one can adopt to deal with stage fear effectively. This course will not deal with, cover or elaborate on any other technique or aspect of public speaking.",
+    "teacherThumb": "https://images.unsplash.com/photo-1489980557514-251d61e3eeb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjN8fHVzZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    "teacherSkills": "Skilled in English"
+  },
+  {
+    "_id": "63fs3rb4f0ef032bc4g328cd95",
+    "courseId": 12,
+    "courseName": "Successful Negotiation: Essential Strategies and Skills",
+    "categories": "Marketing",
+    "courseTutor": "Rubel json",
+    "courseDuration": "6 Hours",
+    "courseThumb": "https://img.freepik.com/free-vector/marketing-concept-illustration_114360-3903.jpg?w=740&t=st=1667551443~exp=1667552043~hmac=1ae1916bc970245870b02446a83a1f7ba75715be29def6563c56bf28968e41fb",
+    "coursePrice": 35,
+    "courseEnrollment": 11544,
+    "courseDescription": "We all negotiate on a daily basis. On a personal level, we negotiate with friends, family, landlords, car sellers and employers, among others. Negotiation is also the key to business success. No business can survive without profitable contracts. Within a company, negotiation skills can lead to your career advancement.I hope that you will join the hundreds of thousands of learners who have made “Successful Negotiation” one of the most popular and highly-rated MOOCs worldwide.  In the course, you’ll learn about and practice the four steps to a successful negotiation: ",
+    "teacherThumb": "https://images.unsplash.com/photo-1571826867433-29518cc0b091?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzV8fHVzZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    "teacherSkills": "Marketing Expert"
+  },
+  {
+    "_id": "632d3rb4f0ef032bc4g328cd95",
+    "courseId": 13,
+    "courseName": "Learn Adobe Illustrator Course From Scratch",
+    "categories": "Design",
+    "courseTutor": "Eeri Maek",
+    "courseDuration": "4 Hours",
+    "courseThumb": "https://img.freepik.com/free-vector/happy-freelancer-with-computer-home-young-man-sitting-armchair-using-laptop-chatting-online-smiling-vector-illustration-distance-work-online-learning-freelance_74855-8401.jpg?w=740&t=st=1667551574~exp=1667552174~hmac=cf305aa33f86186e8beef86dc0c1e98786801e5424834c7866a55ef492051131",
+    "coursePrice": 25,
+    "courseEnrollment": 21544,
+    "courseDescription": "Give wings to your creativity with our comprehensive and unique course on Adobe Illustrator. Illustrator is the vector drawing tool for art and Illustration. Learn with this course to create amazing graphics for Web, Video and Film. In this course of over 10 hours you will learn expert tips and tricks and will learn to do advance design and graphics work. You will start with basic Illustrator techniques and will progress on to topics such as Pen Tool, Transforming, Gradient, Types & Panels, Design, Perspective and Automation.",
+    "teacherThumb": "https://images.unsplash.com/photo-1621592484082-2d05b1290d7a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzJ8fHVzZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    "teacherSkills": "Design Illustrator Expert"
+  },
+  {
+    "_id": "633rerb4f0ef032bc4g328cd95",
+    "courseId": 14,
+    "courseName": "Stock Market Investing for Beginners",
+    "categories": "Marketing",
+    "courseTutor": "Wirsd radgon",
+    "courseDuration": "6 Hours",
+    "courseThumb": "https://img.freepik.com/free-vector/gradient-stock-market-concept_23-2149166929.jpg?w=740&t=st=1667551702~exp=1667552302~hmac=71fd4e47238f610a6a4b610785ab5483e4fae23936ca90994d598c68472807e8",
+    "coursePrice": 18,
+    "courseEnrollment": 9544,
+    "courseDescription": "This course is all about introducing you to the exciting world of the stock market, taking you from the very foundations of What is a stock? to teaching you about different investing strategies, like Fundamental and Technical analysis. We also discuss the investment strategies used by some of the most successful investors in the world, like Warren Buffett and Peter Lynch, who both achieved tremendous track records over 40+ year long careers. After each set of lectures you will have the chance to test your knowledge by taking quizzes on the material covered.",
+    "teacherThumb": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTU2fHx1c2VyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    "teacherSkills": "Marktek Investing Expert"
   }
 ]
