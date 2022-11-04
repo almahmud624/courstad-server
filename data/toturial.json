@@ -1,6 +1,5 @@
 [
   {
-    "_id": "6357b4f00bd2198840dd5e4f",
     "courseId": 1,
     "courseName": "The Basic Of Financial Analyst Online tutorial",
     "categories": "Marketing",
@@ -14,7 +13,6 @@
     "teacherSkills": "Expert in financial analyst and financial planing"
   },
   {
-    "_id": "6357b4f0d275b8b7091558a0",
     "courseId": 2,
     "courseName": "Advance PHP Knowledge With Laravel To Make Smart Web",
     "categories": "Development",
@@ -28,7 +26,6 @@
     "teacherSkills": "Professional in PHP & larabel,Full stack web developer "
   },
   {
-    "_id": "6357b4f006edb535863d3894",
     "courseId": 3,
     "courseName": "The Complete Business Plan tutorial (Includes 50 Templates)",
     "categories": "Business",
@@ -42,7 +39,6 @@
     "teacherSkills": "Professional in Business analyst and Business planing "
   },
   {
-    "_id": "6357b4f07391e28f3f8d89f2",
     "courseId": 4,
     "courseName": "Microsoft Excel for Beginner",
     "categories": "Digital Marketing",
@@ -56,7 +52,6 @@
     "teacherSkills": "Expert in Microsoft Excel ,Office and Digital Marketing"
   },
   {
-    "_id": "6357b4f050209de0e5ef5c1f",
     "courseId": 5,
     "courseName": "UI/UX Design Pattern For Succesfull Software Applications",
     "categories": "Design",
@@ -70,7 +65,6 @@
     "teacherSkills": "Expert in Design"
   },
   {
-    "_id": "6357b4f08f6dbb83558fc049",
     "courseId": 6,
     "courseName": "Master Native English Class I Speaking Skills",
     "categories": "English",
@@ -84,7 +78,6 @@
     "teacherSkills": "Skilled in English spoken"
   },
   {
-    "_id": "6357b4f044c5c65283027b56",
     "courseId": 7,
     "courseName": "Tableau 2022 A-Z:Hands-On Tableau Training For Data Science!",
     "categories": "Science",
@@ -98,7 +91,6 @@
     "teacherSkills": "Expert in Data Science"
   },
   {
-    "_id": "6357b4f0ef032bc9838cd950",
     "courseId": 8,
     "courseName": "React JS, Angular & Vue JS",
     "categories": "Development",
@@ -112,7 +104,6 @@
     "teacherSkills": "Expert in Development"
   },
   {
-    "_id": "6357b4f0ef032bc4g838cd95",
     "courseId": 9,
     "courseName": "Introduction to iOS app development, Xcode and Interface Builder",
     "categories": "Development",
@@ -126,7 +117,6 @@
     "teacherSkills": "Development Expert"
   },
   {
-    "_id": "635erb4f0ef032bc4g838cd95",
     "courseId": 10,
     "courseName": "Getting Started with Python",
     "categories": "Development",
@@ -140,7 +130,6 @@
     "teacherSkills": "Expert in Development"
   },
   {
-    "_id": "63fs3rb4f0ef032bc4g838cd95",
     "courseId": 11,
     "courseName": "Conquering the Fear of Public Speaking",
     "categories": "English",
@@ -154,7 +143,6 @@
     "teacherSkills": "Skilled in English"
   },
   {
-    "_id": "63fs3rb4f0ef032bc4g328cd95",
     "courseId": 12,
     "courseName": "Successful Negotiation: Essential Strategies and Skills",
     "categories": "Marketing",
@@ -168,7 +156,6 @@
     "teacherSkills": "Marketing Expert"
   },
   {
-    "_id": "632d3rb4f0ef032bc4g328cd95",
     "courseId": 13,
     "courseName": "Learn Adobe Illustrator Course From Scratch",
     "categories": "Design",
@@ -182,7 +169,6 @@
     "teacherSkills": "Design Illustrator Expert"
   },
   {
-    "_id": "633rerb4f0ef032bc4g328cd95",
     "courseId": 14,
     "courseName": "Stock Market Investing for Beginners",
     "categories": "Marketing",

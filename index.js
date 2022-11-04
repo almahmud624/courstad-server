@@ -1,11 +1,13 @@
 const express = require("express");
 const app = express();
 const { MongoClient, ServerApiVersion } = require("mongodb");
+var ObjectId = require("mongodb").ObjectId;
 require("dotenv").config();
 const cors = require("cors");
 const port = process.env.PORT || 4000;
 
 app.use(cors());
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send("Courstad Server is Running");
@@ -19,7 +21,7 @@ const client = new MongoClient(uri, {
 });
 async function run() {
   try {
-    const courseCollection = client.db("courstad").collection("courses");
+    const courseCollection = client.db("courstad").collection("allCourses");
 
     // get data from server
     app.get("/courses", async (req, res) => {
@@ -28,6 +30,15 @@ async function run() {
       const courses = await cursor.toArray();
       res.send(courses);
     });
+    // get single data from server
+    app.get("/courses/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: ObjectId(id) };
+      const selectedCourse = await courseCollection.findOne(query);
+      console.log(selectedCourse);
+
+      res.send(selectedCourse);
+    });
   } catch {
     // client.close()
   }
@@ -35,14 +46,6 @@ async function run() {
 
 run().catch((error) => console.log(error));
 
-app.get("/courses/:id", (req, res) => {
-  const courseId = req.params.id;
-  const selectedCourse = courses.find((course) => course._id === courseId);
-  res.send(selectedCourse);
-});
-
 app.listen(port, () => {
   console.log("Courstad running on port", port);
 });
-
-// courstad // b1JKkyGvt3pjo9LP
