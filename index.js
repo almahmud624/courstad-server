@@ -25,18 +25,24 @@ async function run() {
 
     // get data from server
     app.get("/courses", async (req, res) => {
+      const page = parseInt(req.query.page);
+      const size = parseInt(req.query.size);
+      console.log(page, size);
+
       const query = {};
       const cursor = courseCollection.find(query);
-      const courses = await cursor.toArray();
-      res.send(courses);
+      const courses = await cursor
+        .skip(page * size)
+        .limit(size)
+        .toArray();
+      const count = await courseCollection.estimatedDocumentCount();
+      res.send({ count, courses });
     });
     // get single data from server
     app.get("/courses/:id", async (req, res) => {
       const id = req.params.id;
       const query = { _id: ObjectId(id) };
       const selectedCourse = await courseCollection.findOne(query);
-      console.log(selectedCourse);
-
       res.send(selectedCourse);
     });
   } catch {
