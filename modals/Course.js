@@ -7,7 +7,6 @@ const courseSchema = new mongoose.Schema({
   },
   courseId: {
     type: Number,
-    required: true,
   },
   categories: {
     type: String,

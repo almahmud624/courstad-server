@@ -57,7 +57,6 @@ router.patch("/video/:id", async (req, res) => {
 router.delete("/video/:id", async (req, res) => {
   try {
     const video = await Video.findByIdAndRemove({ _id: req.params.id });
-    console.log(video);
     const message = {
       message: "Video deleted successfully",
       videoId: video?._id,

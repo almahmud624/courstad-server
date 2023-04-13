@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 const videoSchema = new mongoose.Schema(
   {
     course_id: {
-      type: String,
+      type: Schema.Types.Mixed,
       required: true,
     },
     title: {

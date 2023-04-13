@@ -10,6 +10,9 @@ const port = process.env.PORT || 4000;
 // router
 const coursesRoute = require("./routes/courses");
 const videosRoute = require("./routes/videos");
+const assignmentsRoute = require("./routes/assignments");
+const quizzesRoute = require("./routes/quizzes");
+const assignmentMarksRoute = require("./routes/assignmentMarks");
 
 app.use(cors());
 app.use(express.json());
@@ -31,6 +34,9 @@ mongoose
 
 app.use("/api/v1", coursesRoute);
 app.use("/api/v1", videosRoute);
+app.use("/api/v1", assignmentsRoute);
+app.use("/api/v1", quizzesRoute);
+app.use("/api/v1", assignmentMarksRoute);
 
 app.listen(port, () => {
   console.log("Courstad running on port", port);
