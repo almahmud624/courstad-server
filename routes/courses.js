@@ -5,8 +5,13 @@ const Course = require("../modals/Course");
 
 router.get("/courses", async (req, res) => {
   try {
-    const course = await Course.find();
-    res.status(200).json(course);
+    const page = parseInt(req.query.page);
+    const size = parseInt(req.query.size);
+    const courses = await Course.find()
+      .skip(page * size)
+      .limit(size);
+    const count = await Course.countDocuments();
+    res.status(200).json({ count, courses });
   } catch (err) {
     res.status(500).json(err);
   }

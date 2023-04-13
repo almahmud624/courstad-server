@@ -29,6 +29,10 @@ router.post("/user/new", async (req, res) => {
     const newUser = new User({
       ...req.body,
     });
+    const findStoredUser = await User.find({ email: req.body.email });
+    if (findStoredUser.length) {
+      return res.status(200).json(findStoredUser[0]);
+    }
     const user = await newUser.save();
     res.status(200).json(user);
   } catch (err) {
