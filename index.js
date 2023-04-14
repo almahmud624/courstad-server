@@ -15,6 +15,7 @@ const quizzesRoute = require("./routes/quizzes");
 const assignmentMarksRoute = require("./routes/assignmentMarks");
 const quizMarksRoute = require("./routes/quizMarks");
 const usersRoute = require("./routes/users");
+const enrolledCourseRoute = require("./routes/enrolled");
 
 app.use(cors());
 app.use(express.json());
@@ -41,6 +42,7 @@ app.use("/api/v1", quizzesRoute);
 app.use("/api/v1", assignmentMarksRoute);
 app.use("/api/v1", quizMarksRoute);
 app.use("/api/v1", usersRoute);
+app.use("/api/v1", enrolledCourseRoute);
 
 app.listen(port, () => {
   console.log("Courstad running on port", port);
