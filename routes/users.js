@@ -2,7 +2,7 @@ const router = require("express").Router();
 const User = require("../modals/User");
 
 // get all users
-router.get("enrolled", async (req, res) => {
+router.get("/users", async (req, res) => {
   try {
     const users = await User.find();
     res.status(200).json(users);

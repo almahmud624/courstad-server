@@ -37,6 +37,9 @@ const QuizMarkSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  userAns: {
+    type: Schema.Types.Mixed,
+  },
 });
 
 module.exports = mongoose.model("quizMarks", QuizMarkSchema);

@@ -41,4 +41,21 @@ router.post("/course/new", async (req, res) => {
   }
 });
 
+// update course
+router.patch("/course/:id", async (req, res) => {
+  try {
+    const course = await Course.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      upsert: true,
+    });
+    const message = {
+      message: "Course updated successfully",
+      data: course,
+    };
+    res.status(200).json(message);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;

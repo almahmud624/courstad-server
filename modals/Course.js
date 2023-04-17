@@ -1,9 +1,11 @@
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 const courseSchema = new mongoose.Schema({
   courseName: {
     type: String,
     required: true,
+    unique: true,
   },
   courseId: {
     type: Number,
@@ -43,6 +45,9 @@ const courseSchema = new mongoose.Schema({
   teacherSkills: {
     type: String,
     required: true,
+  },
+  rating: {
+    type: Schema.Types.Mixed,
   },
 });
 
