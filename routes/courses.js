@@ -58,4 +58,36 @@ router.patch("/course/:id", async (req, res) => {
   }
 });
 
+// remove specific rating from course using PATCH
+router.patch("/course/:courseId/rating/:ratingId", async (req, res) => {
+  const { courseId, ratingId } = req.params;
+  const { type, userRating } = req.body;
+  try {
+    // find the targeted course
+    const course = await Course.findById(courseId);
+    if (!course) {
+      return res.status(404).json({ message: "Course not found" });
+    }
+    // find the targeted rating by its id
+    const ratingIndex = course.rating.findIndex((rate) => rate._id == ratingId);
+    if (ratingIndex === -1) {
+      return res.status(404).json({ message: "Rating not found" });
+    }
+    if (type === "update") {
+      // update the targeted rating
+      course.rating[ratingIndex].userRating = userRating;
+    } else if (type === "remove") {
+      // remove the targeted rating
+      course.rating.splice(ratingIndex, 1);
+    } else {
+      return res.status(400).json({ msg: "Invalid request type" });
+    }
+    // save the updated course
+    await course.save();
+    res.json(course);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;

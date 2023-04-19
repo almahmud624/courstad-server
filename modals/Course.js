@@ -47,7 +47,7 @@ const courseSchema = new mongoose.Schema({
     required: true,
   },
   rating: {
-    type: Schema.Types.Mixed,
+    type: [{ student_id: Schema.Types.Mixed, userRating: String }],
   },
 });
 
