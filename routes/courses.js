@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const Course = require("../modals/Course");
+const Enroll = require("../modals/Enroll");
 
 // get all course
 
@@ -7,7 +8,15 @@ router.get("/courses", async (req, res) => {
   try {
     const page = parseInt(req.query.page);
     const size = parseInt(req.query.size);
-    const courses = await Course.find()
+    const enrolledUserId = req.query.enrolled;
+    const findEnrollUser = await Enroll.find({
+      student_id: { $in: enrolledUserId },
+    });
+    const enrolledCourseId = findEnrollUser.map((user) => user?.course_id);
+    const query =
+      enrolledCourseId.length > 0 ? { _id: { $in: enrolledCourseId } } : {};
+
+    const courses = await Course.find(query)
       .skip(page * size)
       .limit(size);
     const count = await Course.countDocuments();
@@ -18,7 +27,6 @@ router.get("/courses", async (req, res) => {
 });
 
 // get course by id
-
 router.get("/course/:id", async (req, res) => {
   try {
     const course = await Course.findById({ _id: req.params.id });
