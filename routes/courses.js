@@ -9,14 +9,33 @@ router.get("/courses", async (req, res) => {
     const page = parseInt(req.query.page);
     const size = parseInt(req.query.size);
     const enrolledUserId = req.query.enrolled;
+    const categories = req.query.categories;
+    const search = req.query.search;
+
     const findEnrollUser = await Enroll.find({
       student_id: { $in: enrolledUserId },
     });
     const enrolledCourseId = findEnrollUser.map((user) => user?.course_id);
-    const query =
-      enrolledCourseId.length > 0 ? { _id: { $in: enrolledCourseId } } : {};
+    const criteria = {};
+    if (enrolledCourseId.length > 0) {
+      criteria._id = { $in: enrolledCourseId };
+    }
+    let categoryList = categories && categories?.split(",");
+    if (categoryList?.length > 0) {
+      criteria.categories = { $in: categoryList };
+    }
 
-    const courses = await Course.find(query)
+    // const searchCourse = await Course.find().where({
+    //   $and: [
+    //     { courseName: { $regex: new RegExp(search, "i") } },
+    //     { categories: { $in: categoryList } },
+    //   ],
+    // });
+    // console.log(searchCourse);
+    // console.log("--------------------");
+
+    const courses = await Course.find(criteria)
+      .where({ courseName: { $regex: search, $options: "i" } })
       .skip(page * size)
       .limit(size);
     const count = await Course.countDocuments();
