@@ -3,41 +3,144 @@ const Course = require("../modals/Course");
 const Enroll = require("../modals/Enroll");
 
 // get all course
-
 router.get("/courses", async (req, res) => {
   try {
     const page = parseInt(req.query.page);
     const size = parseInt(req.query.size);
-    const enrolledUserId = req.query.enrolled;
+    const userId = req.query.userId;
+    const enrolledType = req.query.enrolled;
     const categories = req.query.categories;
     const search = req.query.search;
+    const sort = req.query.sort;
 
-    const findEnrollUser = await Enroll.find({
-      student_id: { $in: enrolledUserId },
-    });
-    const enrolledCourseId = findEnrollUser.map((user) => user?.course_id);
-    const criteria = {};
-    if (enrolledCourseId.length > 0) {
-      criteria._id = { $in: enrolledCourseId };
+    const pipeline = [];
+
+    pipeline.push(
+      {
+        $lookup: {
+          from: "enrolleds",
+          let: { courseId: "$_id" },
+          pipeline: [
+            {
+              $match: {
+                $expr: { $eq: [{ $toObjectId: "$course_id" }, "$$courseId"] },
+              },
+            },
+          ],
+          as: "enrollment",
+        },
+      },
+      {
+        $addFields: {
+          totalEnroll: {
+            $size: "$enrollment",
+          },
+        },
+      }
+    );
+
+    if (userId && enrolledType === "enrolled") {
+      pipeline.push({
+        $match: {
+          "enrollment.student_id": userId,
+        },
+      });
+    } else if (userId && enrolledType === "unenrolled") {
+      pipeline.push({
+        $match: {
+          $expr: {
+            $not: [
+              {
+                $in: [userId, "$enrollment.student_id"],
+              },
+            ],
+          },
+        },
+      });
     }
+
+    pipeline.push(
+      {
+        $lookup: {
+          from: "ratings",
+          let: { courseId: "$_id" },
+          pipeline: [
+            {
+              $match: {
+                $expr: { $eq: [{ $toObjectId: "$course_id" }, "$$courseId"] },
+              },
+            },
+          ],
+          as: "reviews",
+        },
+      },
+      {
+        $addFields: {
+          rating: {
+            $avg: "$reviews.rating",
+          },
+        },
+      }
+    );
+
+    switch (sort) {
+      case "most_rated":
+        pipeline.push({
+          $sort: {
+            rating: -1,
+          },
+        });
+        break;
+      case "most_enrolled":
+        pipeline.push({
+          $sort: {
+            totalEnroll: -1,
+          },
+        });
+        break;
+      case "price_to_low":
+        pipeline.push({
+          $sort: {
+            coursePrice: -1,
+          },
+        });
+        break;
+      case "price_to_high":
+        pipeline.push({
+          $sort: {
+            coursePrice: 1,
+          },
+        });
+        break;
+      default:
+        break;
+    }
+
+    if (search.length > 0) {
+      pipeline.push({
+        $match: { courseName: { $regex: search, $options: "i" } },
+      });
+    }
+
     let categoryList = categories && categories?.split(",");
     if (categoryList?.length > 0) {
-      criteria.categories = { $in: categoryList };
+      pipeline.push({
+        $match: {
+          categories: { $in: categoryList },
+        },
+      });
     }
+    pipeline.push(
+      {
+        $skip: page * size,
+      },
+      {
+        $limit: size,
+      }
+    );
 
-    // const searchCourse = await Course.find().where({
-    //   $and: [
-    //     { courseName: { $regex: new RegExp(search, "i") } },
-    //     { categories: { $in: categoryList } },
-    //   ],
-    // });
-    // console.log(searchCourse);
-    // console.log("--------------------");
+    const courses = await Course.aggregate([pipeline]);
 
-    const courses = await Course.find(criteria)
-      .where({ courseName: { $regex: search, $options: "i" } })
-      .skip(page * size)
-      .limit(size);
     const count = await Course.countDocuments();
     res.status(200).json({ count, courses });
   } catch (err) {
@@ -114,6 +217,16 @@ router.patch("/course/:courseId/rating/:ratingId", async (req, res) => {
     res.json(course);
   } catch (err) {
     res.status(500).json(err);
+  }
+});
+
+// get courses categories
+router.get("/courses/categories", async (req, res) => {
+  try {
+    const categories = await Course.distinct("categories");
+    res.status(200).json(categories);
+  } catch (err) {
+    res.status(404).json("Course not found!");
   }
 });
 

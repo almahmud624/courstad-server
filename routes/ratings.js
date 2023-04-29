@@ -12,10 +12,10 @@ router.get("/ratings", async (req, res) => {
 });
 
 // get user rating by id
-router.get("/rating/:id", async (req, res) => {
+router.get("/rating/:userId", async (req, res) => {
   try {
-    const rating = await Rating.findById({
-      _id: req.params.id,
+    const rating = await Rating.find({
+      student_id: { $in: req.params.userId },
     });
     res.status(200).json(rating);
   } catch (err) {

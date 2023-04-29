@@ -4,7 +4,15 @@ const Enroll = require("../modals/Enroll");
 // get all enrolled course
 router.get("/enrolled", async (req, res) => {
   try {
-    const enroll = await Enroll.find();
+    const courseId = req.query.courseId;
+    const userId = req.query.userId;
+    let criteria = {};
+    if (courseId) {
+      criteria.course_id = { $in: courseId };
+    } else if (userId) {
+      criteria.student_id = { $in: userId };
+    }
+    const enroll = await Enroll.find(criteria);
     res.status(200).json(enroll);
   } catch (err) {
     res.status(500).json(err);
