@@ -2,16 +2,18 @@ const router = require("express").Router();
 const Rating = require("../modals/Rating");
 
 // get all user rating
-router.get("/ratings", async (req, res) => {
+router.get("/ratings/:courseId", async (req, res) => {
   try {
-    const rating = await Rating.find();
+    const rating = await Rating.find({
+      course_id: { $in: req.params.courseId },
+    });
     res.status(200).json(rating);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// get user rating by id
+// get user rating by user id
 router.get("/rating/:userId", async (req, res) => {
   try {
     const rating = await Rating.find({

@@ -1,31 +1,25 @@
 const router = require("express").Router();
 const Enroll = require("../modals/Enroll");
 
-// get all enrolled course
-router.get("/enrolled", async (req, res) => {
+// get enrolled course course id
+router.get("/enrolled/:courseId", async (req, res) => {
   try {
-    const courseId = req.query.courseId;
-    const userId = req.query.userId;
-    let criteria = {};
-    if (courseId) {
-      criteria.course_id = { $in: courseId };
-    } else if (userId) {
-      criteria.student_id = { $in: userId };
-    }
-    const enroll = await Enroll.find(criteria);
-    res.status(200).json(enroll);
+    const enrolledCourses = await Enroll.find({
+      course_id: { $in: req.params.courseId },
+    });
+    res.status(200).json(enrolledCourses);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// get enrolled course by id
-router.get("/enroll/:id", async (req, res) => {
+// get enrolled course by user id
+router.get("/user-enrolled/:userId", async (req, res) => {
   try {
-    const enroll = await Enroll.findById({
-      _id: req.params.id,
+    const userEnrolled = await Enroll.find({
+      student_id: { $in: req.params.userId },
     });
-    res.status(200).json(enroll);
+    res.status(200).json(userEnrolled);
   } catch (err) {
     res.status(404).json("Enrolled course not found!");
   }

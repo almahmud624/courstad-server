@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const Course = require("../modals/Course");
 const Enroll = require("../modals/Enroll");
+const { addEnrollmentInfo } = require("../utils/addEnrollmentInfo");
+const { addRatingInfo } = require("../utils/addRatingInfo");
 
 // get all course
 router.get("/courses", async (req, res) => {
@@ -15,29 +17,7 @@ router.get("/courses", async (req, res) => {
 
     const pipeline = [];
 
-    pipeline.push(
-      {
-        $lookup: {
-          from: "enrolleds",
-          let: { courseId: "$_id" },
-          pipeline: [
-            {
-              $match: {
-                $expr: { $eq: [{ $toObjectId: "$course_id" }, "$$courseId"] },
-              },
-            },
-          ],
-          as: "enrollment",
-        },
-      },
-      {
-        $addFields: {
-          totalEnroll: {
-            $size: "$enrollment",
-          },
-        },
-      }
-    );
+    pipeline.push(...addEnrollmentInfo());
 
     if (userId && enrolledType === "enrolled") {
       pipeline.push({
@@ -59,29 +39,7 @@ router.get("/courses", async (req, res) => {
       });
     }
 
-    pipeline.push(
-      {
-        $lookup: {
-          from: "ratings",
-          let: { courseId: "$_id" },
-          pipeline: [
-            {
-              $match: {
-                $expr: { $eq: [{ $toObjectId: "$course_id" }, "$$courseId"] },
-              },
-            },
-          ],
-          as: "reviews",
-        },
-      },
-      {
-        $addFields: {
-          rating: {
-            $avg: "$reviews.rating",
-          },
-        },
-      }
-    );
+    pipeline.push(...addRatingInfo());
 
     switch (sort) {
       case "most_rated":
