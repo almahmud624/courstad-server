@@ -36,4 +36,21 @@ router.post("/assignmentMark/new", async (req, res) => {
   }
 });
 
+// update assignmentMark
+router.patch("/assignmentMark/:id", async (req, res) => {
+  try {
+    const assignmentMark = await AssignmentMark.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new: true,
+        upsert: true,
+      }
+    );
+    res.status(200).json(assignmentMark);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;

@@ -5,7 +5,12 @@ const Video = require("../modals/Video");
 
 router.get("/videos", async (req, res) => {
   try {
-    const videos = await Video.find();
+    const id = req.query.id;
+    let criteria = {};
+    if (id.length > 0) {
+      criteria.course_id = id;
+    }
+    const videos = await Video.find(criteria);
     res.status(200).json(videos);
   } catch (err) {
     res.status(500).json(err);
