@@ -13,7 +13,7 @@ router.get("/ratings/:courseId", async (req, res) => {
   }
 });
 
-// get user rating by user id
+// get rating by user id
 router.get("/rating/:userId", async (req, res) => {
   try {
     const rating = await Rating.find({
