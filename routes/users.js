@@ -40,4 +40,15 @@ router.post("/user/new", async (req, res) => {
   }
 });
 
+// check user role
+router.post("/user/verify", async (req, res) => {
+  try {
+    const { email } = req.body;
+    const findStoredUser = await User.find({ email });
+    res.status(200).json(findStoredUser[0]);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
 module.exports = router;
