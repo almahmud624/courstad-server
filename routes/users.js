@@ -43,11 +43,19 @@ router.post("/user/new", async (req, res) => {
 // check user role
 router.post("/user/verify", async (req, res) => {
   try {
-    const { email } = req.body;
-    const findStoredUser = await User.find({ email });
-    res.status(200).json(findStoredUser[0]);
+    // find stored user
+    const foundUser = await User.find({ email: req.body.email });
+    const { name, email, photoURL, _id } = foundUser?.[0];
+    const user = { _id, name, email, photoURL };
+    if (foundUser.length && email === "admin@gmail.com") {
+      user.role = "admin";
+      return res.status(200).json(user);
+    } else {
+      user.role = "student";
+      res.status(200).json(user);
+    }
   } catch (error) {
-    res.status(500).json(error);
+    res.status(500).json("User not found!");
   }
 });
 
